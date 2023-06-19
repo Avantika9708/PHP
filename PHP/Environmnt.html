@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Environment Variables :-</h2>
+    <ol type="I">
+        <li>Provide information about execution environment like type of web browser, types of 
+            server, & details of HTTP connection.
+        </li>
+        <li>It is stored as array in PHP</li>
+        <li>$_ENV</li>
+    </ol>
+    <h2>Variable names</h2>
+    <ol type="i">
+        <li>$_SERVER --> data about currently running server </li>
+        <li>$_ENV --> data about server's environment</li>
+        <li>$GET --> Data posted to the server by get method</li>
+        <li>$_POST --> Data posted to the server by post method</li>
+        <li>$_cookies --> Data contained in cookies on the client's computer</li>
+        <li>$_GLOBAL --> Array containingall global variables</li>
+    </ol>
+    <br>
+    <br>
+    <h2>Forms Processing</h2>
+    <p id="para1"> HTML forms are used to send the user information to the server and returns the result back to the browser. For example, if you want to get the details of visitors to your website, and send them good thoughts, you can collect the user information by means of form processing. Then, the information can be validated either at the client-side or on the server-side. The final result is sent to the client through the respective web browser. To create a HTML form, form tag should be used.</p><br>
+    <table align="left" border="1" cellspacing="10" cellpadding="10">
+        <tr>
+            <td>Attribute</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>name or id</td>
+            <td>It specifies the name of the form and is used to identify individual forms.</td>
+        </tr>
+        <tr>
+            <td>action</td>
+            <td>It specifies the location to which the form data has to be sent when the form is submitted.</td>
+        </tr>
+        <tr>
+            <td>method</td>
+            <td>
+                It specifies the HTTP method that is to be used when the form is submitted. The possible values are get and post. If get method is used, the form data are visible to the users in the url. Default HTTP method is get.</td>
+        </tr>
+        <tr>
+            <td>encType</td>
+            <td>It specifies the encryption type for the form data when the form is submitted.</td>
+        </tr>
+        <tr>
+            <td>novalidate</td>
+            <td>It implies the server not to verify the form data when the form is submitted.</td>
+        </tr>
+
+    </table>
+    <br>
+    <br>
+    <br>
+    <b>Controls Used In forms :-)</b> Form processing contains a set of controls through which the client and server can communicate and share information. The controls used in forms are:-
+    <ul>
+        <li><b>Textbox:</b> Textbox allows the user to provide single-line input, which can be used for getting values such as names, search menu and etc.</li>
+        <li><b>Textarea:</b>Textarea allows the user to provide multi-line input, which can be used for getting values such as an address, message etc.</li>
+        <li><b>DropDown:</b>Dropdown or combobox allows the user to provide select a value from a list of values.</li>
+        <li><b>DropDown:</b>Radio buttons allow the user to select only one option from the given set of options.</li>
+        <li><b>CheckBox:</b> Checkbox allows the user to select multiple options from the set of given options.</li>
+        <li><b>Buttons: </b> Buttons are the clickable controls that can be used to submit the form.</li>
+    </ul>
+    <br>
+    <br>
+    <h2><b>Creating a simple HTML Form:</b></h2><p>All the form controls given above is designed by using the input tag based on the type attribute of the tag. In the below script, when the form is submitted, no event handling mechanism is done. Event handling refers to the process done while the form is submitted. These event handling mechanisms can be done by using javaScript or PHP. However, JavaScript provides only client-side validation. Hence, we can use PHP for form processing.</p>
+<br>
+<b>HTML Code :</b><br><br>
+ <b><i>< html>
+< !DOCTYPE html><br>
+
+< title>Simple Form Processing< /title><br>
+< head><br>
+< /head><br>
+
+< form id="form1" method="post"><br>
+< body><br>
+		FirstName:<br>
+		< input type="text" name="firstname" required/><br>
+		< br><br>
+		< br><br>
+		LastName<br>
+		< input type="text" name="lastname" required/><br>
+		< br><br>
+		< br><br>
+		Address<br>
+		< input type="text" name="address" required/><br>
+		< br><br>
+		< br><br>
+		Email Address:<br>
+		< input type="email" name="emailaddress" required/><br>
+		< br><br>
+		< br><br>
+		Password:<br>
+		< input type="password" name="password" required/><br>
+		< br><br>
+		< br><br>
+		< input type="submit" value="Submit”/><br>
+	< /form><br>
+< /body><br>
+< /html></i></b>
+<br><br>
+
+<b> Form Validation :</b><p> Form validation is done to ensure that the user has provided the relevant information. Basic validation can be done using HTML elements. For example, in the above script, the email address text box is having a type value as “email”, which prevents the user from entering the incorrect value for an email. Every form field in the above script is followed by a required attribute, which will intimate the user not to leave any field empty before submitting the form. PHP methods and arrays used in form processing are:</p><br>
+
+<ul>
+    <li><b>isset():</b> This function is used to determine whether the variable or a form control is having a value or not.</li>
+    <li><b>$_GET[]:</b>It is used the retrieve the information from the form control through the parameters sent in the URL. It takes the attribute given in the url as the parameter.</li>
+    <li><b>$_POST[]:</b> It is used the retrieve the information from the form control through the HTTP POST method. IT takes name attribute of corresponding form control as the parameter.</li>
+    <li><b>$_REQUEST[]:</b>: It is used to retrieve an information while using a database.</li>
+</ul>
+<h2> Creating a Database</h2>
+<img src="media/f7.png" alt="Creating a Database" height="800px" width="600px">
+<h2>PHP Cookies</h2>
+<p id="para1">A <b>cookie</b> in PHP is a small file with a maximum size of 4KB that the web server stores on the client computer. They are typically used to keep track of information such as a username that the site can retrieve to personalize the page when the user visits the website next time. A cookie can only be read from the domain that it has been issued from. Cookies are usually set in an HTTP header but JavaScript can also set a cookie directly on a browser.</p>
+<br>
+<b>Setting Cookie In PHP:</b>To set a cookie in PHP, the setcookie() function is used. The setcookie() function needs to be called prior to any output generated by the script otherwise the cookie will not be set.<br>
+<br><b>Syntax :</b><br>setcookie(name, value, expire, path, domain, security);<br>
+<ul>
+    <li><b>Parameters :</b> It is used to set the name of the cookie.
+    <ul>
+        <li><b>Name:</b>It is used to set the name of the cookie.</li>
+        <li><b>Value:</b> It is used to set the value of the cookie.</li>
+        <li><b>Expire:</b> It is used to set the expiry timestamp of the cookie after which the cookie can’t be accessed.</li>
+        <li><b>Path:</b> It is used to specify the path on the server for which the cookie will be available.</li>
+        <li><b>Domain: </b>It is used to specify the domain for which the cookie is available.</li>
+        <li><b>Security:</b> It is used to indicate that the cookie should be sent only if a secure HTTPS connection exists.</li>
+    </ul></li>
+</ul>
+
+<p id="para1">There are two types of Cookies :-</p>
+<ul>
+    <li> Session Cookies</li>
+    <li>Persistent Cookies</li>
+</ul>
+
+</body>
+</html>
